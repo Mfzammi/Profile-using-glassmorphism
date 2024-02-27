@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Event</title>
+</head>
+<body>
+    <button id="createEventButton">Create Event</button>
+
+    <script>
+        document.getElementById('createEventButton').addEventListener('click', function() {
+            // Construct Google Calendar URL
+            const eventTitle = 'My Awesome Event';
+            const startDate = '2024-10-10';
+            const startTime = '10:00';
+            const endDate = '2024-10-10';
+            const endTime = '12:00';
+            const googleCalendarURL = `https://calendar.google.com/calendar/r/eventedit?text=${eventTitle}&dates=${startDate}/${startTime}/${endDate}/${endTime}`;
+
+            // Open Google Calendar in a new tab/window
+            window.open(googleCalendarURL, '_blank');
+
+            // Send email notification
+            const sendGridAPIKey = 'YOUR_SENDGRID_API_KEY';
+            // Make an API call to SendGrid to send the email
+            // Customize email content with event details
+            // Example: "You've created an event: My Awesome Event on March 1, 2024 from 10:00 AM to 12:00 PM."
+        });
+    </script>
+</body>
+</html>
